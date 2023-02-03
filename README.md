@@ -1,15 +1,7 @@
-## Youtubeの要素をスクリプトで取得できないため開発休止中
-
 ## Introduction
 
-This product enhances YouTube experiences.<br/>
+This product enhances Twitch experiences.<br/>
 This product is cloned from Michael Xieyang Liu's repository.
-
-## Managing Product
-
-- Milestonesでエピックストーリーを管理
-- Issueでストーリーを管理
-- 上記をProject上でStatus管理
 
 ## Installing and Running
 
