@@ -1,0 +1,39 @@
+.half-window-player {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  height: unset !important;
+}
+
+div.half-window-chats[aria-label='右カラム'] {
+  bottom: 0 !important;
+  position: fixed !important;
+  top: auto !important;
+  width: 100% !important;
+  height: calc(100vh - 100vw * 9 / 16) !important;
+}
+
+.half-window-chats .stream-chat-header,
+.half-window-chats .chat-input-tray__open {
+  display: none !important;
+}
+
+.half-window-chats .chat-input__buttons-container {
+  margin: 0 !important;
+}
+
+.half-window-chats .chat-input {
+  padding: 0 !important;
+}
+
+.half-window-chats .chat-wysiwyg-input__editor {
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.half-window-chats .channel-root__right-column {
+  width: 100% !important;
+}
+
+.half-window-chats .right-column__toggle-visibility {
+  display: none;
+}
