@@ -1,3 +1,4 @@
+/* Half Window */
 .half-window-player {
   width: 100% !important;
   aspect-ratio: 16 / 9 !important;
@@ -36,4 +37,17 @@ div.half-window-chats[aria-label='右カラム'] {
 
 .half-window-chats .right-column__toggle-visibility {
   display: none;
+}
+
+/* Block Stamp */
+h4[data-test-selector='emote-code-header'] {
+  width: calc(100% - 60px) !important;
+}
+.block-stamp-button {
+  appearance: none;
+  width: 60px;
+  padding: 5px 15px;
+  color: white;
+  background-color: #b10303;
+  border-radius: 10px;
 }
