@@ -1,5 +1,6 @@
 import {blockList} from "./blockStamp";
 import {sleep} from "../../../../util";
+import {hideChatsByEmote} from "./blockChat";
 
 const embedBlockStampButton = (viewerCard: HTMLElement) => {
   const emoteH4 = viewerCard.querySelector("h4[data-test-selector='emote-code-header']");
@@ -14,6 +15,7 @@ const embedBlockStampButton = (viewerCard: HTMLElement) => {
   blockButton.classList.add("block-stamp-button");
   blockButton.onclick = () => {
     blockList.add(emoteName);
+    hideChatsByEmote(emoteName);
   }
   emoteParent.appendChild(blockButton);
 }

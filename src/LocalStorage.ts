@@ -7,7 +7,7 @@ class LocalStorage {
     await chrome.storage.local.set({[key]: value})
   }
 
-  async get<T extends keyof LocalStorageType>(key: T): Promise<LocalStorageType[T]> {
+  async get<T extends keyof LocalStorageType>(key: T): Promise<LocalStorageType[T] | undefined> {
     const result = await chrome.storage.local.get(key);
     return result[key];
   }

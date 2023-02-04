@@ -1,9 +1,25 @@
 import {blockList} from "./blockStamp";
 import {sleep} from "../../../../util";
 
+  let targetNode: HTMLElement | null = null;
+
+  const hideChats = (nodes: NodeList | NodeListOf<HTMLElement>, blockEmotes: string[]) => {
+    nodes.forEach((node) => {
+      if (node instanceof HTMLElement) {
+        node.querySelectorAll<HTMLImageElement>(".chat-line__message--emote").forEach(emote => {
+          // if emote to be blocked exists, hide a chat
+          if (blockEmotes.includes(emote.alt)) {
+            node.classList.add("hidden-chat");
+            return;
+          }
+        })
+      }
+    })
+
+  }
+
 export const initBlockChat = async () => {
   // repeatedly waits until targetNode are found
-  let targetNode: HTMLElement | null = null;
   while (targetNode === null) {
     await sleep(1000)
     targetNode = document.querySelector("div.chat-scrollable-area__message-container[data-test-selector='chat-scrollable-area__message-container']");
@@ -17,17 +33,7 @@ export const initBlockChat = async () => {
   const observeChats: MutationCallback = (mutationList, observer) => {
     for (const mutation of mutationList) {
       if (mutation.type === 'childList') {
-        mutation.addedNodes.forEach((node) => {
-          if (node instanceof HTMLElement) {
-            node.querySelectorAll<HTMLImageElement>(".chat-line__message--emote").forEach(emote => {
-              // if emote to be blocked exists, hide a chat
-              if (blockList.get().includes(emote.alt)) {
-                node.classList.add("hidden-chat")
-                return;
-              }
-            })
-          }
-        })
+        hideChats(mutation.addedNodes, blockList.get());
       }
     }
   };
@@ -39,4 +45,9 @@ export const initBlockChat = async () => {
   if (targetNode) {
     observer.observe(targetNode, config);
   }
+}
+
+export const hideChatsByEmote = (emoteName:string) => {
+  if(!targetNode) return;
+  hideChats(targetNode.childNodes, [emoteName])
 }

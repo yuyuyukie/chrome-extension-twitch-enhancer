@@ -3,9 +3,15 @@ import {initBlockChat} from "./blockChat";
 import {localStorage} from "../../../../LocalStorage";
 
 export class BlockList {
-  private blockList: string[] = ["PogChamp"]
+  private blockList: string[] = []
 
-  private async saveLocalStorage(){
+  constructor() {
+    localStorage.get("blockList").then(value => {
+      this.blockList = value ?? [];
+    })
+  }
+
+  private async saveLocalStorage() {
     await localStorage.set("blockList", this.blockList);
   }
 
@@ -28,7 +34,7 @@ export const initBlockStamp = () => {
   ]);
 }
 
-// TODO delete existing chats when a stamp are added to the block list
+// TODO hide popup when blockStampButton were clicked
 // TODO create block list in Popup
 // TODO unblock stamp if stamp were already blocked
 // TODO validate whether words to block are already blocked
