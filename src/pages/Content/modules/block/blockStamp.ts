@@ -3,7 +3,7 @@ import {initBlockChat} from "./blockChat";
 import {localStorage} from "../../../../LocalStorage";
 
 export class BlockList {
-  private blockList: string[] = []
+  private blockList: string[] = ["PogChamp"]
 
   private async saveLocalStorage(){
     await localStorage.set("blockList", this.blockList);

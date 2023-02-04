@@ -1,5 +1,5 @@
 import {blockList} from "./blockStamp";
-import {sleep} from "../../../util";
+import {sleep} from "../../../../util";
 
 const embedBlockStampButton = (viewerCard: HTMLElement) => {
   const emoteH4 = viewerCard.querySelector("h4[data-test-selector='emote-code-header']");
