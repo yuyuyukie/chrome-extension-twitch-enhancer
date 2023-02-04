@@ -1,11 +1,11 @@
 {
-  "name": "chrome-extension-enhance-youtube",
+  "name": "chrome-extension-twitch-enhancer",
   "version": "1.0.0",
   "description": "",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yuyuyukie/chrome-extension-enhance-youtube"
+    "url": "https://github.com/yuyuyukie/chrome-extension-twitch-enhancer"
   },
   "scripts": {
     "build": "node utils/build.js",
