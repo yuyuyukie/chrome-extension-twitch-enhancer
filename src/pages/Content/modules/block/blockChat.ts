@@ -20,9 +20,9 @@ export const initBlockChat = async () => {
         mutation.addedNodes.forEach((node) => {
           if (node instanceof HTMLElement) {
             node.querySelectorAll<HTMLImageElement>(".chat-line__message--emote").forEach(emote => {
-              // if emote to be blocked exists, delete a chat
+              // if emote to be blocked exists, hide a chat
               if (blockList.get().includes(emote.alt)) {
-                node.remove();
+                node.classList.add("hidden-chat")
                 return;
               }
             })

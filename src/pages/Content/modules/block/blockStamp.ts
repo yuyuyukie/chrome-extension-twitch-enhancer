@@ -28,8 +28,7 @@ export const initBlockStamp = () => {
   ]);
 }
 
-// TODO observe chats and delete them depends on block list
-
+// TODO unmute when half-window-mode were activated
 // TODO delete existing chats when a stamp are added to the block list
 // TODO create block list in Popup
 // TODO unblock stamp if stamp were already blocked

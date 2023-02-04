@@ -54,3 +54,8 @@ h4[data-test-selector='emote-code-header'] {
 .block-stamp-button:hover{
   background-color: #b72424;
 }
+
+/* Block Chat */
+.hidden-chat {
+  display: none;
+}
