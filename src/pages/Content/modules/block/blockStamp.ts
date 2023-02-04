@@ -33,8 +33,3 @@ export const initBlockStamp = () => {
     initBlockChat()
   ]);
 }
-
-// TODO hide popup when blockStampButton were clicked
-// TODO create block list in Popup
-// TODO unblock stamp if stamp were already blocked
-// TODO validate whether words to block are already blocked

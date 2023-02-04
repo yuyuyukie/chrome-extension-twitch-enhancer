@@ -43,6 +43,7 @@ div.half-window-chats[aria-label='右カラム'] {
 h4[data-test-selector='emote-code-header'] {
   width: calc(100% - 60px) !important;
 }
+
 .block-stamp-button {
   appearance: none;
   padding: 5px 15px;
@@ -51,8 +52,22 @@ h4[data-test-selector='emote-code-header'] {
   background-color: #b10303;
   border-radius: 0.4rem;
 }
-.block-stamp-button:hover{
+
+.block-stamp-button:hover {
   background-color: #b72424;
+}
+
+.block-stamp-button-blocked {
+  appearance: none;
+  padding: 5px 15px;
+  height: 30px;
+  color: white;
+  background-color: #04a704;
+  border-radius: 0.4rem;
+}
+
+.block-stamp-button-blocked:hover {
+  background-color: #45a445;
 }
 
 /* Block Chat */

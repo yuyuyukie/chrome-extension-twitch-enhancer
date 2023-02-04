@@ -2,6 +2,10 @@ import {blockList} from "./blockStamp";
 import {sleep} from "../../../../util";
 import {hideChatsByEmote} from "./blockChat";
 
+const getButtonClassName = (isBlocked: boolean): string =>
+  isBlocked ? "block-stamp-button-blocked" : "block-stamp-button"
+const getButtonText = (isBlocked: boolean): string =>
+  isBlocked ? "ブロック済" : "ブロック"
 const embedBlockStampButton = (viewerCard: HTMLElement) => {
   const emoteH4 = viewerCard.querySelector("h4[data-test-selector='emote-code-header']");
   // if viewer card were not stamp viewer card, ignore it
@@ -11,11 +15,20 @@ const embedBlockStampButton = (viewerCard: HTMLElement) => {
     return;
   }
   const blockButton = document.createElement("button");
-  blockButton.innerText = "ブロック";
-  blockButton.classList.add("block-stamp-button");
+  let isBlocked = blockList.get().includes(emoteName);
+  blockButton.innerText = getButtonText(isBlocked);
+  const className = getButtonClassName(isBlocked);
+  blockButton.classList.add(className);
   blockButton.onclick = () => {
+    isBlocked = !isBlocked;
     blockList.add(emoteName);
     hideChatsByEmote(emoteName);
+    blockButton.className.replace(className, getButtonClassName(isBlocked));
+    blockButton.innerText = getButtonText(isBlocked);
+    const closeButton = document.querySelector("button[aria-label='非表示']");
+    if (closeButton instanceof HTMLElement) {
+      closeButton.click();
+    }
   }
   emoteParent.appendChild(blockButton);
 }
