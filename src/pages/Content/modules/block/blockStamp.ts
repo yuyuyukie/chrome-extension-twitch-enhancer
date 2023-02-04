@@ -16,18 +16,11 @@ export class BlockList {
 export const blockList = new BlockList();
 
 export const initBlockStamp = () => {
-  document.addEventListener("click", ev => {
-    if (ev.target instanceof HTMLImageElement &&
-      ev.target.classList.contains("chat-image")
-    ) {
-      detectViewerCard()
-    }
-  })
+  detectViewerCard();
   initBlockChat();
 }
 
 
-// TODO fix: use MutationObserver to detect appearing emote popup
 // TODO observe chats and delete them depends on block list
 
 // TODO create block list in Popup

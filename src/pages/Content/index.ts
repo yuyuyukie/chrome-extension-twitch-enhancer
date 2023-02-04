@@ -11,9 +11,3 @@ document.addEventListener('keydown', (evt) => {
 });
 
 initBlockStamp();
-
-// TODO add block button to stamp detail popup
-// TODO pressing block button adds stamp to the NG list
-// TODO search the way to crawl chats
-// TODO delete comments depends on NG list
-// TODO create block list in Popup
