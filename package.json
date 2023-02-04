@@ -1,11 +1,11 @@
 {
-  "name": "chrome-extension-enhance-youtube",
+  "name": "chrome-extension-twitch-enhancer",
   "version": "1.0.0",
   "description": "",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yuyuyukie/chrome-extension-enhance-youtube"
+    "url": "https://github.com/yuyuyukie/chrome-extension-twitch-enhancer"
   },
   "scripts": {
     "build": "node utils/build.js",
@@ -28,6 +28,7 @@
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
     "@testing-library/react-hooks": "^7.0.2",
@@ -60,6 +61,8 @@
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.3.1",
+    "jest-chrome": "^0.8.0",
+    "jest-environment-jsdom": "^29.4.1",
     "node-sass": "^8.0.0",
     "prettier": "^2.7.1",
     "sass-loader": "^13.2.0",
@@ -71,5 +74,10 @@
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
+  },
+  "overrides": {
+    "jest-chrome": {
+      "jest": "$jest"
+    }
   }
 }

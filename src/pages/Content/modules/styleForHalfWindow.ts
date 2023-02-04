@@ -6,6 +6,11 @@ export const styleForHalfWindow = (): void => {
   ) {
     sizeButton.click();
   }
+  // unmute
+  const mutedButton = document.querySelector("button[aria-label='ミュート解除（m）']");
+  if(mutedButton instanceof HTMLElement){
+    mutedButton.click();
+  }
   // style video-player element to 100% width
   const player = document.querySelector("div.persistent-player");
   if (player instanceof HTMLElement) {
