@@ -1,4 +1,4 @@
-import {BlockList} from "../src/pages/Content/modules/blockStamp";
+import {BlockList} from "../src/pages/Content/modules/block/blockStamp";
 
 describe('BlockList', () => {
   it('should add stamp to block list', () => {
